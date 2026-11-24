@@ -1,0 +1,83 @@
+# ============================================================
+#  Unity - .gitignore (solo lo esencial va al repositorio)
+#  Se versionan: Assets/  Packages/  ProjectSettings/
+# ============================================================
+
+# --- Carpetas generadas por Unity (NUNCA subir) ---
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# --- Archivos de solucion/proyecto generados por Unity/IDE ---
+/*.csproj
+/*.unityproj
+/*.sln
+/*.slnx
+/*.suo
+/*.user
+/*.userprefs
+/*.pidb
+/*.booproj
+/*.svd
+/*.pdb
+/*.mdb
+/*.opendb
+/*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+.vs/
+.vsconfig
+.idea/
+*.DotSettings.user
+
+# --- Builds de compilado ---
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# --- Crash / debug reports ---
+sysinfo.txt
+crashlytics-build.properties
+crashlytics.properties
+crashreport.config
+# Unity3D generated meta files for crash reports
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+[Aa]ssets/[Aa]rtifacts/**
+
+# --- Meta de carpetas especiales ---
+!/[Aa]ssets/**/*.meta
+!/[Pp]ackages/**/*.meta
+
+# --- Sistema operativo ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- Editores ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+
+# --- Temporales ---
+*.tmp
+*.bak
+*.log
+*.swp
+
+# --- Recuperacion de escenas (crash recovery de Unity) ---
+[Aa]ssets/_Recovery/
+[Aa]ssets/_Recovery.meta

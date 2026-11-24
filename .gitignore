@@ -1,84 +1,64 @@
 # ============================================================
-#  Unity - .gitignore (solo lo esencial va al repositorio)
-#  Se versionan: Assets/  Packages/  ProjectSettings/
+#  Object3d - .gitignore GLOBAL (red de seguridad)
+#  Cada proyecto tiene su propio .gitignore detallado:
+#    - Objeto3D_Escritorio/.gitignore
+#    - Objeto3D_VR/.gitignore
+#  Estos patrones cubren cualquier proyecto nuevo que se
+#  agregue a futuro sin necesidad de configurar nada.
 # ============================================================
 
-# --- Carpetas generadas por Unity (NUNCA subir) ---
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
-/[Mm]emoryCaptures/
-/[Rr]ecordings/
+# --- Carpetas generadas por Unity ---
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Mm]emoryCaptures/
+**/[Rr]ecordings/
+**/[Aa]ssets/_Recovery/
+**/[Aa]ssets/_Recovery.meta
 
-# --- Archivos de solucion/proyecto generados por Unity/IDE ---
-/*.csproj
-/*.unityproj
-/*.sln
-/*.slnx
-/*.suo
-/*.user
-/*.userprefs
-/*.pidb
-/*.booproj
-/*.svd
-/*.pdb
-/*.mdb
-/*.opendb
-/*.VC.db
-*.pidb.meta
-*.pdb.meta
-*.mdb.meta
-.vs/
-.vsconfig
-.idea/
-*.DotSettings.user
+# --- Soluciones / proyectos generados por Unity o el IDE ---
+**/*.csproj
+**/*.unityproj
+**/*.sln
+**/*.slnx
+**/*.suo
+**/*.user
+**/*.userprefs
+**/*.pidb
+**/*.booproj
+**/*.svd
+**/*.pdb
+**/*.mdb
+**/*.opendb
+**/*.VC.db
+**/.vs/
+**/.vsconfig
+**/.idea/
 
-# --- Builds de compilado ---
-*.apk
-*.aab
-*.unitypackage
-*.app
-
-# --- Crash / debug reports ---
-sysinfo.txt
-crashlytics-build.properties
-crashlytics.properties
-crashreport.config
-# Unity3D generated meta files for crash reports
-/[Aa]ssets/[Ss]treamingAssets/aa/*
-[Aa]ssets/[Aa]rtifacts/**
-
-# --- Meta de carpetas especiales ---
-!/[Aa]ssets/**/*.meta
-!/[Pp]ackages/**/*.meta
+# --- Builds ---
+**/*.apk
+**/*.aab
+**/*.unitypackage
+**/*.app
 
 # --- Sistema operativo ---
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
+**/.DS_Store
+**/._*
+**/Thumbs.db
+**/desktop.ini
 
 # --- Editores ---
-.vscode/*
-!.vscode/extensions.json
-!.vscode/launch.json
-!.vscode/settings.json
+**/.vscode/*
+!**/.vscode/extensions.json
+!**/.vscode/launch.json
+!**/.vscode/settings.json
 
 # --- Temporales ---
-*.tmp
-*.bak
-*.log
-*.swp
-*~
-
-# --- Recuperacion de escenas (crash recovery de Unity) ---
-[Aa]ssets/_Recovery/
-[Aa]ssets/_Recovery.meta
+**/*.tmp
+**/*.bak
+**/*.log
+**/*.swp
