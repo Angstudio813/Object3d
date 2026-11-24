@@ -6,8 +6,11 @@ de reciclaje.
 
 | Carpeta | Proyecto | Descripción |
 |---|---|---|
-| `/` (raíz) | **Planta de Reciclaje** (escritorio) | Recorrido FPS por la planta, generada por herramienta de editor |
+| `Objeto3D_Escritorio/` | **Objeto3D_Escritorio** | Recorrido FPS por la planta (PC / escritorio) |
 | `Objeto3D_VR/` | **Objeto3D_VR** | Misma planta adaptada a **realidad virtual** (Oculus / XR) |
+
+> Cada carpeta es un **proyecto Unity independiente y autocontenido**.
+> Abre la carpeta que corresponda en Unity Hub, no la raíz del repo.
 
 ## Requisitos
 
@@ -15,7 +18,7 @@ de reciclaje.
 |---|---|
 | Unity Editor | **6000.6.10f1** (Unity 6) |
 | Sistema de entrada | Input System (`com.unity.inputsystem`) |
-| VR (solo `Objeto3D_VR`) | Paquetes XR / Oculus incluidos en `Packages/manifest.json` |
+| VR (solo `Objeto3D_VR`) | Paquetes XR / Oculus incluidos en su `Packages/manifest.json` |
 
 > Instala la versión exacta del editor indicada en cada `ProjectSettings/ProjectVersion.txt`.
 > Si usas otra versión de Unity 6, el editor pedirá actualizar el proyecto (es normal).
@@ -26,9 +29,9 @@ de reciclaje.
    ```bash
    git clone https://github.com/Angstudio813/Object3d.git
    ```
-2. Abre **Unity Hub → Add → Add project from disk** y selecciona **la carpeta del proyecto**:
-   - Proyecto escritorio → la raíz del repo (donde está `ProjectSettings/`)
-   - Proyecto VR → la carpeta `Objeto3D_VR/`
+2. Abre **Unity Hub → Add → Add project from disk** y selecciona la carpeta del proyecto:
+   - `Objeto3D_Escritorio/` → versión de escritorio
+   - `Objeto3D_VR/` → versión VR
 3. Unity regenerará automáticamente `Library/`, `Temp/`, `Logs/` y los `.csproj`
    (no se versionan, por eso el repo es ligero: ~20 MB en total).
 4. Escena principal: `Assets/Scenes/EscenarioReciclaje.unity`
@@ -37,23 +40,28 @@ de reciclaje.
 ## Estructura del repositorio
 
 ```
-.                                  # Proyecto Unity "Planta de Reciclaje"
-├── Assets/
-│   ├── Editor/                    # Herramientas de editor (menú "Herramientas")
-│   │   ├── CrearControladorFPSEditor.cs   # Crea el jugador FPS en la escena
-│   │   └── GeneradorPlantaReciclaje.cs    # Genera toda la planta automáticamente
-│   ├── Generated/                 # Terreno y layers generados por la herramienta
-│   ├── materials/                 # Materiales base (colores)
-│   ├── Models/                    # Modelos 3D (Car, Home) en FBX + texturas
-│   ├── Prefabs/                   # Contenedores (Metal, Papel, Plásticos, Vidrio)
-│   ├── Scenes/                    # EscenarioReciclaje (principal) y SampleScene
-│   ├── Scripts/ControladorFPS.cs  # Movimiento y cámara en primera persona
-│   └── Textures/
-├── Packages/                      # manifest.json + packages-lock.json
-├── ProjectSettings/               # Configuración del proyecto Unity
-├── .vscode/
-├── .gitignore
-└── Objeto3D_VR/                   # Proyecto Unity VR (independiente)
+.
+├── README.md
+├── .gitignore                     # red de seguridad global (cubre cualquier proyecto Unity)
+│
+├── Objeto3D_Escritorio/           # PROYECTO 1 - escritorio
+│   ├── Assets/
+│   │   ├── Editor/                # Herramientas de editor (menú "Herramientas")
+│   │   │   ├── CrearControladorFPSEditor.cs   # Crea el jugador FPS en la escena
+│   │   │   └── GeneradorPlantaReciclaje.cs    # Genera toda la planta automáticamente
+│   │   ├── Generated/             # Terreno y layers generados por la herramienta
+│   │   ├── materials/             # Materiales base (colores)
+│   │   ├── Models/                # Modelos 3D (Car, Home) en FBX + texturas
+│   │   ├── Prefabs/               # Contenedores (Metal, Papel, Plásticos, Vidrio)
+│   │   ├── Scenes/                # EscenarioReciclaje (principal) y SampleScene
+│   │   ├── Scripts/ControladorFPS.cs  # Movimiento y cámara en primera persona
+│   │   └── Textures/
+│   ├── Packages/                  # manifest.json + packages-lock.json
+│   ├── ProjectSettings/           # Configuración del proyecto Unity
+│   ├── .vscode/
+│   └── .gitignore
+│
+└── Objeto3D_VR/                   # PROYECTO 2 - realidad virtual
     ├── Assets/
     │   ├── Editor/  Generated/  materials/  Models/
     │   ├── Oculus/  Plugins/  XR/  Resources/  CompositionLayers/
@@ -65,8 +73,8 @@ de reciclaje.
     └── .gitignore
 ```
 
-> Cada carpeta es un **proyecto Unity independiente**. No compartas entre ellos la carpeta
-> `Library/`: si copias un proyecto, copia solo `Assets/`, `Packages/` y `ProjectSettings/`.
+> **Nunca copies la carpeta `Library/` entre proyectos.** Si duplicas un proyecto Unity,
+> copia solo `Assets/`, `Packages/` y `ProjectSettings/`.
 
 ## Scripts principales
 
@@ -83,8 +91,8 @@ de reciclaje.
 los `.csproj`, `.sln`/`.slnx` y los archivos de IDE se generan solos al abrir el proyecto.
 
 Sin excluirlos, este repo pasaría de **~20 MB a más de 5.6 GB** (1.9 GB del proyecto de
-escritorio + 3.7 GB del VR) sin ningún beneficio. Todo eso ya está cubierto por los
-`.gitignore` (hay uno en la raíz y otro dentro de `Objeto3D_VR/`).
+escritorio + 3.7 GB del VR) sin ningún beneficio. Todo eso ya está cubierto por el
+`.gitignore` global de la raíz y por el `.gitignore` de cada proyecto.
 
 ## Notas para el siguiente desarrollador
 
