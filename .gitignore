@@ -78,3 +78,7 @@ desktop.ini
 *.log
 *.swp
 *~
+
+# --- Recuperacion de escenas (crash recovery de Unity) ---
+[Aa]ssets/_Recovery/
+[Aa]ssets/_Recovery.meta
